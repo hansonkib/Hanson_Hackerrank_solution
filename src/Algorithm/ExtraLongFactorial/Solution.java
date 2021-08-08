@@ -11,12 +11,13 @@ public class Solution {
 //
 //        bufferedReader.close();
 
-        public BigInteger extraLongFactorials(int n){
+        public String extraLongFactorials(int n){
             BigInteger factorial = BigInteger.ONE;
             for (int i=2 ; i<= n; i++) {
                 factorial = factorial.multiply(BigInteger.valueOf(i));
             }
-            return factorial;
+            String s = String.valueOf(factorial);
+            return s;
         }
 
 }

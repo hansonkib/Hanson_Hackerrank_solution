@@ -27,7 +27,7 @@ class SolutionTest {
     void extraLongFactorials() throws IOException {
         FileReader fileReader = new FileReader("src\\Algorithm\\ExtraLongFactorial\\output.txt");
         BufferedReader bf = new BufferedReader(fileReader);
-        BigInteger k = BigInteger.valueOf(Long.parseLong(bf.readLine()));
-        assertEquals(k,new Solution().extraLongFactorials(25));
+        String line = bf.readLine();
+        assertEquals(line,new Solution().extraLongFactorials(25));
     }
 }
