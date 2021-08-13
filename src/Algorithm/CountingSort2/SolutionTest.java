@@ -18,8 +18,8 @@ BufferedReader bufferedReader, bufferedReader1;
     @BeforeEach
     void setUp() throws FileNotFoundException {
         solution = new Solution();
-        fileReader = new FileReader("src\\Algorithm\\CountingSort2\\TestFiles\\input00.txt");
-        fileReader1 = new FileReader("src\\Algorithm\\CountingSort2\\TestFiles\\output00.txt");
+        fileReader = new FileReader("src\\Algorithm\\CountingSort2\\TestFiles\\inputTestFile.txt");
+        fileReader1 = new FileReader("src\\Algorithm\\CountingSort2\\TestFiles\\outputTestFile.txt");
         bufferedReader = new BufferedReader(fileReader);
         bufferedReader1 = new BufferedReader(fileReader1);
     }

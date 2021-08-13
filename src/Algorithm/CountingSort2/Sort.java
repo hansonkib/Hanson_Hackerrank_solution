@@ -7,7 +7,7 @@ public class Sort {
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
         try{
-            FileReader fileReader = new FileReader("src\\Algorithm\\CountingSort2\\TestFiles\\input00.txt");
+            FileReader fileReader = new FileReader("src\\Algorithm\\CountingSort2\\TestFiles\\inputTestFile.txt");
             BufferedReader buf=new BufferedReader(fileReader);
             int n=Integer.parseInt(buf.readLine());
             String[] str=buf.readLine().split(" ");

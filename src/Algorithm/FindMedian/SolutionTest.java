@@ -19,8 +19,8 @@ BufferedReader bufferedReader1, bufferedReader2;
     @BeforeEach
     void setUp() throws FileNotFoundException {
         solution = new Solution();
-        fileReader1 = new FileReader("src\\Algorithm\\FindMedian\\TestFiles\\input00.txt");
-        fileReader2 = new FileReader("src\\Algorithm\\FindMedian\\TestFiles\\output00.txt");
+        fileReader1 = new FileReader("src\\Algorithm\\FindMedian\\TestFiles\\inputTestFile.txt");
+        fileReader2 = new FileReader("src\\Algorithm\\FindMedian\\TestFiles\\outputTestFile.txt");
         bufferedReader1 = new BufferedReader(fileReader1);
         bufferedReader2 = new BufferedReader(fileReader2);
     }

@@ -1,26 +1,9 @@
 package Algorithm.QuickSort;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Solution {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int[] ar = new int[n];
-        for(int i=0;i<n;i++){
-            ar[i]=in.nextInt();
-        }
-        partition(ar);
-        printArray(ar);
-    }
-    static void printArray(int[] ar) {
-        for(int n: ar){
-            System.out.print(n+" ");
-        }
-        System.out.println("");
-    }
-    static void partition(int[] ar) {
+    static String partition(int[] ar) {
         int p=ar[0];
         int[] copy= Arrays.copyOf(ar, ar.length);
         int c=0;
@@ -38,5 +21,10 @@ public class Solution {
                 c++;
             }
         }
+        StringBuilder stringBuilder = new StringBuilder();
+        for(Integer k : ar){
+            stringBuilder.append(k+" ");
+        }
+        return stringBuilder.toString();
     }
 }
