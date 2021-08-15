@@ -21,8 +21,8 @@ BufferedReader bufferedReader1;
     void setUp() throws FileNotFoundException {
         System.out.println("setting it up");
         solutionOne = new Solution();
-        fileReader = new FileReader("src\\Algorithm\\ClosestNumbers\\testFiles\\input00.txt");
-        fileReader1 = new FileReader("src\\Algorithm\\ClosestNumbers\\testFiles\\output00.txt");
+        fileReader = new FileReader("src\\Algorithm\\ClosestNumbers\\testFiles\\inputTestFile.txt");
+        fileReader1 = new FileReader("src\\Algorithm\\ClosestNumbers\\testFiles\\outputTestFile.txt");
         bufferedReader = new BufferedReader(fileReader);
         bufferedReader1 = new BufferedReader(fileReader1);
     }

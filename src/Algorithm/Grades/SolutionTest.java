@@ -13,7 +13,6 @@ class SolutionTest {
     @Test
     void solveGrade() {
         List<Integer> inputGrades = new ArrayList<>();
-        inputGrades.add(4);
         inputGrades.add(73);
         inputGrades.add(67);
         inputGrades.add(38);

@@ -14,6 +14,7 @@ public class Solution {
                 }
             }
         }
+        System.out.println(sb);
         return sb.toString();
     }
 }

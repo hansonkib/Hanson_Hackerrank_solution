@@ -1,57 +1,55 @@
 package Algorithm.AdvancedInsertionSort;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Solution {
-    private static long merge(long[] array, int s, int mid, int e) {
-        long[] buf = new long[e - s + 1];
-        int count = 0;
-        long total = 0;
-        int i = s, j = mid + 1;
-        while (i <= mid && j <= e) {
-            if (array[i] <= array[j])
-                buf[count++] = array[i++];
-            else {
-                total += mid + 1 - i;
-                buf[count++] = array[j++];
+    public String advanceInsertionSort(int[][] inputArray){
+        int[] array = new int[inputArray[0].length];
+        int[] array2 = new int[inputArray[1].length];
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < inputArray[i].length; j++) {
+                array[j]=inputArray[0][j];
+                array2[j]=inputArray[1][j];
             }
         }
-        while (i <= mid)
-            buf[count++] = array[i++];
-        while (j <= e)
-            buf[count++] = array[j++];
-        for (i = 0; i < buf.length; i++)
-            array[s + i] = buf[i];
-        return total;
+        sb.append(mergeSort(array,0,array.length-1)+"\n").append(mergeSort(array2,0,array2.length-1));
+        System.out.println(sb);
+        return sb.toString();
     }
-
-    private static long mergeSort(long[] array, int s, int e) {
-        if (s >= e)
+    public static long mergeSort(int[] a, int low, int high) {
+        if (high <= low)
             return 0;
-        else {
-            long total = 0;
-            int mid = (s + e) / 2;
-            total += mergeSort(array, s, mid);
-            total += mergeSort(array, mid + 1, e);
-            total += merge(array, s, mid, e);
-            return total;
-        }
-    }
-
-    public static long numReverse(long[] array) {
-        return mergeSort(array, 0, array.length - 1);
-    }
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        long T = in.nextLong();
-        for (long i = 0; i < T; i++) {
-            int N = in.nextInt();
-            long[] a = new long[N];
-            for (int j = 0; j < N; j++) {
-                a[j] = in.nextLong();
+        int temp;
+        long count = 0;
+        if (high == low + 1) {
+            if (a[low] > a[high]) {
+                temp = a[high];
+                a[high] = a[low];
+                a[low] = temp;
+                count++;
             }
-            System.out.println(numReverse(a));
+            return count;
         }
+        int mid = (high + low) / 2;
+        count += mergeSort(a, low, mid);
+        count += mergeSort(a, mid + 1, high);
+        count += merge(a, low, mid, high);
+        return count;
     }
+
+    public static long merge(int[] a, int low, int mid, int high) {
+        long count = 0;
+        for (int i = low, j = mid+1; i <= mid && j <= high;) {
+            if (a[i] > a[j]) {
+                count += mid - i + 1; //only count the first part, the second part is sorted
+                j++;
+            }
+            else
+                i++;
+        }
+        Arrays.sort(a, low, high+1);
+        return count;
+    }
+
 }

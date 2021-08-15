@@ -6,7 +6,7 @@ import java.util.List;
 public class Solution {
     public List<Integer> solveGrade(List<Integer> grd){
         List<Integer> grades = new ArrayList<>();
-        int grade = 0;
+        int grade;
         int grade1=0;
         for (Integer k : grd){
             for(int a0 = 0; a0 < grd.size(); a0++){
@@ -20,6 +20,9 @@ public class Solution {
                 }
             }
             grades.add(grade1);
+        }
+        for (Integer g : grades){
+            System.out.println(g);
         }
         return grades;
     }

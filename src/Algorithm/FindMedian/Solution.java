@@ -10,6 +10,8 @@ public String solve(int n, String[] s){
     }
     Arrays.sort(a);
     StringBuilder stringBuilder = new StringBuilder();
-    return stringBuilder.append(a[n/2]).toString();
+    stringBuilder.append(a[n/2]);
+    System.out.println(stringBuilder);
+    return stringBuilder.toString();
 }
 }
